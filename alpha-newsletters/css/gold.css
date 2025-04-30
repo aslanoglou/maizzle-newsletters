@@ -1,0 +1,8 @@
+:root{
+  --alpha-yellow: #FFFF00;
+}
+@layer components {
+  h1 {
+    @apply py-3 px-6 text-[var(--alpha-yellow)];
+  }
+}
