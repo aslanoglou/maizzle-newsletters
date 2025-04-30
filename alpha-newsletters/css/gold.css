@@ -1,7 +1,12 @@
 :root{
+  --alpha-body-bg:#e6e6e6;
+  --alpha-white: #FFFFFF;
   --alpha-yellow: #FFFF00;
 }
 @layer components {
+  body{
+    @apply bg-[var(--alpha-body-bg)];
+  }
   h1 {
     @apply py-3 px-6 text-[var(--alpha-yellow)];
   }

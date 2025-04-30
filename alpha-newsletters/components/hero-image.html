@@ -1,0 +1,26 @@
+<script props>
+  let styles = []
+
+  if (props.width) {
+    styles.push(`width: ${props.width};`)
+  }
+
+  if (props.height) {
+    styles.push(`max-height: ${props.height};`)
+  }
+
+  module.exports = {
+    width: props.width,
+    height: props.height,
+    name: props.name,
+    styles: styles.join(' '),
+    alt: props.alt || ''
+  }
+</script>
+
+<img
+  src="{{ name }}"
+  src-production="images/{{ name }}"
+  width="{{ width }}"
+  style="{{ styles }}"
+  alt="{{ alt }}" />

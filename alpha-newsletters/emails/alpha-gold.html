@@ -1,8 +1,53 @@
 ---
-bodyClass: bg-slate-50
-preheader: Transactional email template
-title: "Please confirm your email address"
+wrapperBg: white
+utm: alpha-welcome-gold
+altImg: "Alpha Bank Gold Personal Banking"
 ---
-<x-layout>
-<h1>{{page.title}}</h1>
-</x-layout>
+
+<x-gold>
+<!--  <div class="sm:px-4 font-inter">-->
+  <div class="font-sans">
+    <table align="center" class="m-0 mx-auto">
+      <tr>
+        <td class="w-[650px] max-w-full">
+          <table class="w-full">
+            <tr>
+              <td class="py-3 px-4 bg-[{{ page.wrapperBg }}]">
+                <table class="w-full">
+                  <tr>
+                    <td class="w-[172px]">
+                      <a href="https://www.alpha.gr/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="">
+                        <img src="alpha_logo.png" src-production="images/alpha_logo.png" width="172" alt="Alpha Bank">
+                      </a>
+                    </td>
+                    <td class="w-auto"></td>
+                    <td class="w-[93px]">
+                      <a href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                        <img src="gold-logo-personal-transparent.png" src-production="images/gold-logo-personal-transparent.png" width="93" alt="Alpha Bank">
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <x-spacer height="30px" />
+
+                <x-hero-image width="612px" height="511" name="header.png" alt="{{ page.altImg }}"/>
+
+                <x-divider />
+            </tr>
+          </table>
+
+          <table class="w-full">
+            <tr>
+              <td class="py-6 px-9 sm:px-6">
+                <p class="m-0 text-xs text-slate-500">
+                  &copy; {{ new Date().getFullYear() }} Maizzle. All rights reserved.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</x-gold>
