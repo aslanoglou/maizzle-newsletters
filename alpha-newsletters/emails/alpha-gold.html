@@ -2,9 +2,8 @@
 wrapperBg: white
 utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
-headerSecondLogo: "bonus"
 ---
-<!-- for headerSecondLogo use none or gold or bonus-->
+
 
 <x-gold>
   <div class="font-sans">
@@ -14,15 +13,18 @@ headerSecondLogo: "bonus"
           <table class="w-full">
             <tr>
               <td class="py-3 px-4 bg-[{{ page.wrapperBg }}]">
-                <x-header/>
+
+                <!-- For headerSecondLogo use 'none', 'gold', or 'bonus'-->
+                <x-header headerSecondLogo="gold" />
 
                 <x-spacer height="30px" />
 
-                <x-hero-image headerTemplate="{{page.headerSecondLogo}}" width="612px" height="511px" name="header.png" alt="{{ page.altImg }}"/>
+                <x-hero-image width="612px" height="511px" name="header.png" alt="{{ page.altImg }}"/>
 
                 <x-divider />
             </tr>
           </table>
+
           <table class="w-full">
             <tr>
               <td class="py-6 px-9 sm:px-6">

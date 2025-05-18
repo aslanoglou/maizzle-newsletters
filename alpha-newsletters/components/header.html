@@ -1,11 +1,13 @@
 <script props>
-
+  module.exports = {
+    headerSecondLogo: props.headerSecondLogo,
+  }
 </script>
 
 <table class="w-full">
   <tr>
     <td>
-      <if condition="page.headerSecondLogo !== 'bonus'">
+      <if condition="headerSecondLogo !== 'bonus'">
         <table align="left" width="172" class="sm:w-full border-none sm:float-none float-left">
           <tr>
             <td align="center" class="pad_bottom" >
@@ -17,7 +19,7 @@
           </tr>
         </table>
       </if>
-      <if condition="page.headerSecondLogo == 'gold' || page.headerSecondLogo == 'bonus'">
+      <if condition="headerSecondLogo == 'gold' || {{props.headerSecondLogo}} == 'bonus'">
         <table class="w-full sm:table hidden">
           <tr>
             <td>
@@ -26,7 +28,7 @@
           </tr>
         </table>
       </if>
-      <if condition="page.headerSecondLogo == 'gold'">
+      <if condition="headerSecondLogo == 'gold'">
         <table align="right" width="93" class="sm:w-full border-none sm:float-none float-right">
           <tbody>
           <tr>
@@ -39,7 +41,7 @@
           </tbody>
         </table>
      </if>
-      <if condition="page.headerSecondLogo == 'bonus'">
+      <if condition="headerSecondLogo == 'bonus'">
         <table align="right" width="146" class="sm:w-full border-none sm:float-none float-right">
           <tbody>
           <tr>
