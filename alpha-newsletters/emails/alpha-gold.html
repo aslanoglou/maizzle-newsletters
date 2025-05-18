@@ -2,10 +2,11 @@
 wrapperBg: white
 utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
+headerSecondLogo: "bonus"
 ---
+<!-- for headerSecondLogo use none or gold or bonus-->
 
 <x-gold>
-<!--  <div class="sm:px-4 font-inter">-->
   <div class="font-sans">
     <table align="center" class="m-0 mx-auto">
       <tr>
@@ -13,30 +14,15 @@ altImg: "Alpha Bank Gold Personal Banking"
           <table class="w-full">
             <tr>
               <td class="py-3 px-4 bg-[{{ page.wrapperBg }}]">
-                <table class="w-full">
-                  <tr>
-                    <td class="w-[172px]">
-                      <a href="https://www.alpha.gr/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
-                        <img src="alpha_logo.png" src-production="images/alpha_logo.png" width="172" alt="Alpha Bank">
-                      </a>
-                    </td>
-                    <td class="w-auto"></td>
-                    <td class="w-[93px]">
-                      <a href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
-                        <img src="gold-logo-personal-transparent.png" src-production="images/gold-logo-personal-transparent.png" width="93" alt="Alpha Bank">
-                      </a>
-                    </td>
-                  </tr>
-                </table>
+                <x-header/>
 
                 <x-spacer height="30px" />
 
-                <x-hero-image width="612px" height="511px" name="header.png" alt="{{ page.altImg }}"/>
+                <x-hero-image headerTemplate="{{page.headerSecondLogo}}" width="612px" height="511px" name="header.png" alt="{{ page.altImg }}"/>
 
                 <x-divider />
             </tr>
           </table>
-
           <table class="w-full">
             <tr>
               <td class="py-6 px-9 sm:px-6">
