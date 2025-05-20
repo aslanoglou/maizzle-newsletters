@@ -17,8 +17,8 @@
 
   let hasBgClass = () => props.class && props.class.split(' ').some(c => c.startsWith('bg-'))
 
-  if (props['bg-color'] && !hasBgClass()) {
-    styles.push(`background-color: ${props['bg-color']};`)
+  if (props['bgColor'] && !hasBgClass()) {
+    styles.push(`background-color: ${props['bgColor']};`)
   } else {
     styles.push('background-color: #4338ca;')
   }
@@ -26,7 +26,13 @@
   if (props.color) {
     styles.push(`color: ${props.color};`)
   } else {
-    styles.push('color: #fffffe;')
+    styles.push('color: #ffffff;')
+  }
+
+  if (props['btnWidth']) {
+    styles.push(`width: ${props.btnWidth};`)
+  } else {
+    styles.push('width: 273px;')
   }
 
   module.exports = {
@@ -34,22 +40,35 @@
     href: props.href,
     styles: styles.join(''),
     msoPt: props['mso-pt'] || '16px',
-    msoPb: props['mso-pb'] || '31px',
+    msoPb: props['mso-pb'] || '24px',
   }
 </script>
 
-<div class="{{ align }}">
-  <a
-    attributes
-    href="{{{ href }}}"
-    style="{{ styles }}"
-  >
-    <outlook trim>
-      <i class="mso-font-width-[150%]" style="mso-text-raise: {{ msoPb }};" hidden>&emsp;</i>
-    </outlook>
-    <span style="mso-text-raise: {{ msoPt }}" trim><yield /></span>
-    <outlook trim>
-      <i class="mso-font-width-[150%]" hidden>&emsp;&#8203;</i>
-    </outlook>
-  </a>
-</div>
+<table width="100%" cellpadding="0" cellspacing="0" role="none">
+  <tr>
+    <td align="center">
+
+
+  <!--[if mso]>
+
+    <v:rect style="height:48px;width:0;" fill="f" stroke="f" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" />
+
+    <v:roundrect style="width:{{{btnWidth}}};height:55px;position:relative;" arcsize="50%" stroke="f" fill="true" xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:w=&quot;urn:schemas-microsoft-com:office:word&quot;>
+        <v:fill type="gradientradial" color="transparent" color2="{{{bgColor}}}" focus="0" focusposition=".05,0.23" focussize=".9,0.25" />
+    </v:roundrect>
+
+    <v:roundrect href="{{{ href }}}" style="width:{{{btnWidth}}};height:48px;position:relative;v-text-anchor:middle;" arcsize="50%" stroke="f" fillcolor="{{{bgColor}}}" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word">
+        <w:anchorlock/>
+        <v:textbox inset="0,0,0,0">
+        <center>
+    <![endif]-->
+  <a href="{{{ href }}}" style="font-family: Arial, sans-serif;font-size: 16px;margin: 0 auto;padding: 0 36px;color: #ffffff;margin-top: 0;line-height: 48px;background-color:{{bgColor}};border-radius: 5000px;display: inline-block;text-align: center;text-decoration: none;white-space: nowrap;-webkit-text-size-adjust: none">{{{btnText}}}</a>
+  <!--[if mso]>
+  </center>
+  </v:textbox>
+  </v:roundrect>
+  <![endif]-->
+
+    </td>
+  </tr>
+</table>

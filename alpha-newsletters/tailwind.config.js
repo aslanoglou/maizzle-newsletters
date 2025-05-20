@@ -2,6 +2,11 @@
 module.exports = {
   theme: {
     extend:{
+      colors: {
+        alphaWhite: '#FFFFFF',
+        alphaBlue500: '#11366B',
+        alphaBlue400: '#2A4B8C',
+      },
       fontFamily: {
         sans: ['Arial', 'sans-serif'],
       }

@@ -1,5 +1,7 @@
 ---
-wrapperBg: white
+wrapperBg: "#FFFFFF"
+primaryColor: "#11366B"
+dividerColor: "#EBEBEB"
 utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
 ---
@@ -12,8 +14,7 @@ altImg: "Alpha Bank Gold Personal Banking"
         <td class="w-[650px] max-w-full">
           <table class="w-full">
             <tr>
-              <td class="py-3 px-4 bg-[{{ page.wrapperBg }}]">
-
+              <td bgcolor={{page.wrapperBg}} class="py-3 px-4 bg-alphaWhite">
                 <!-- For headerSecondLogo use 'none', 'gold', or 'bonus'-->
                 <x-header headerSecondLogo="gold" />
 
@@ -21,7 +22,11 @@ altImg: "Alpha Bank Gold Personal Banking"
 
                 <x-hero-image width="612px" height="511px" name="header.png" alt="{{ page.altImg }}"/>
 
-                <x-divider space-y="50px" color="#EBEBEB"  />
+                <x-spacer height="30px" />
+
+                <x-button btnWidth="197px" btnText="Ανακαλύψτε την" bgColor="{{page.primaryColor}}" color="{{page.wrapperBg}}" align="center" href="https://maizzle.com" class="rounded-[24px]"/>
+
+                <x-divider space-y="50px" color="{{page.dividerColor}}"  />
             </tr>
           </table>
 
