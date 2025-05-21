@@ -1,0 +1,32 @@
+<script props>
+  let styles = []
+
+  if (props.bgColor) {
+    styles.push(`background-color: ${props.bgColor};`)
+  }
+
+  module.exports = {
+    bgColor: props.bgColor,
+    styles: styles.join(' '),
+  }
+</script>
+
+
+<if condition="topOrBottom === 'top'">
+  <table align="center" width="100%" class="w-full" style="{{ styles }}">
+    <tr>
+      <td width="24px" class="w-6 h-6" align="left"><img src="corner-top-left.png" width="24" height="24" class="block"></td>
+      <td>&nbsp;</td>
+      <td width="24px" class="w-6 h-6" align="right"><img src="corner-top-right.png" width="24" height="24" class="block"></td>
+    </tr>
+  </table>
+</if>
+<else>
+  <table align="center" width="100%" class="w-full" style="{{ styles }}">
+    <tr>
+      <td width="24px" class="w-6 h-6" align="left"><img src="corner-bottom-left.png" width="24" height="24" class="block"></td>
+      <td>&nbsp;</td>
+      <td width="24px" class="w-6 h-6" align="right"><img src="corner-bottom-right.png" width="24" height="24" class="block"></td>
+    </tr>
+  </table>
+</else>

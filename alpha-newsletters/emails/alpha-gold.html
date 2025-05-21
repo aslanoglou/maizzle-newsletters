@@ -28,24 +28,11 @@ altImg: "Alpha Bank Gold Personal Banking"
 
                 <x-divider space-y="50px" color="{{page.dividerColor}}"  />
 
-                <table align="center" width="100%" class="w-full bg-[#DAE2F9]">
-                  <tr>
-                    <td width="24px" class="w-6 h-6" align="left"><img src="corner-top-left.png" width="24" height="24" class="block"></td>
-                    <td>&nbsp;</td>
-                    <td width="24px" class="w-6 h-6" align="right"><img src="corner-top-right.png" width="24" height="24" class="block"></td>
-                  </tr>
-                </table>
+                <x-rounded-corners width="100%" height="auto" bgColor="#DAE2F9" topOrBottom="top" />
+
                 <table class="w-full bg-[#DAE2F9]">
                   <tr>
-                    <td class="px-6">
-                      <img
-                        class="rounded-t"
-                        src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&h=300&q=80"
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="p-6 bg-[#DAE2F9] rounded-b">
+                    <td class="px-6 bg-[#DAE2F9]">
                       <span class="text-xs text-slate-500">April 7, 2020</span>
                       <h2 class="m-0 mt-2 mb-3 text-2xl leading-full">
                         <a href="https://example.com" class="text-black hover:text-slate-700 no-underline">
@@ -61,23 +48,8 @@ altImg: "Alpha Bank Gold Personal Banking"
                     </td>
                   </tr>
                 </table>
-                <table align="center" width="100%" class="w-full bg-[#DAE2F9]">
-                  <tr>
-                    <td width="24px" class="w-6 h-6" align="left"><img src="corner-bottom-left.png" width="24" height="24" class="block"></td>
-                    <td>&nbsp;</td>
-                    <td width="24px" class="w-6 h-6" align="right"><img src="corner-bottom-right.png" width="24" height="24" class="block"></td>
-                  </tr>
-                </table>
-            </tr>
-          </table>
 
-          <table class="w-full">
-            <tr>
-              <td class="py-6 px-9 sm:px-6">
-                <p class="m-0 text-xs text-slate-500">
-                  &copy; {{ new Date().getFullYear() }} Maizzle. All rights reserved.
-                </p>
-              </td>
+                <x-rounded-corners width="100%" height="auto" bgColor="#DAE2F9" topOrBottom="bottom" />
             </tr>
           </table>
         </td>
