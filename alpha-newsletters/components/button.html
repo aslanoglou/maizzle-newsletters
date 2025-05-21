@@ -10,6 +10,7 @@
   }
 
   module.exports = {
+    utmActive: props.utmActive,
     width: props.width,
     height: props.height,
     image: props.image,
@@ -22,7 +23,7 @@
 <table class="w-full">
   <tr>
     <td align="{{align}}">
-      <if condition="utm === 'true'">
+      <if condition="utmActive == true">
         <a href="{{href}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{page.utm}}" class="inline-block" target="_blank">
           <img class="block"
                src="{{ image }}"
