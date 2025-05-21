@@ -21,10 +21,10 @@
 
 <table class="w-full">
   <tr>
-    <td align="center">
+    <td align="{{align}}">
       <if condition="utm === 'true'">
         <a href="{{href}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{page.utm}}" class="inline-block" target="_blank">
-          <img class="mx-auto block"
+          <img class="block"
                src="{{ image }}"
                src-production="images/{{ image }}"
                width="{{ btnWidth }}"
@@ -37,7 +37,7 @@
         </a>
       </if>
       <else>
-        <a href="{{href}}" target="_blank">
+        <a href="{{href}}" class="inline-block" target="_blank">
           <img class="mx-auto block"
                src="{{ image }}"
                src-production="images/{{ image }}"
