@@ -12,15 +12,15 @@
   module.exports = {
     width: props.width,
     height: props.height,
-    name: props.name,
+    image: props.image,
     styles: styles.join(' '),
     alt: props.alt || ''
   }
 </script>
 
 <img class="mx-auto block"
-  src="{{ name }}"
-  src-production="images/{{ name }}"
+  src="{{ image }}"
+  src-production="images/{{ image }}"
   width="{{ width }}"
   style="{{ styles }}"
   alt="{{ alt }}" />
