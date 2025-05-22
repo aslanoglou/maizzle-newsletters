@@ -1,0 +1,115 @@
+<script props>
+  let styles = []
+
+  if (props.imagesWidth) {
+    styles.push(`width: ${props.imagesWidth};`)
+  }
+
+  if (props.imagesHeight) {
+    styles.push(`max-height: ${props.imagesHeight};`)
+  }
+
+  styles.push(`max-width: 100%;`)
+
+  module.exports = {
+    imagesWidth: props.imagesWidth,
+    imagesHeight: props.imagesHeight,
+    firstImage: props.firstImage,
+    firstImageUtm: props.firstImageUtm,
+    secondImage: props.secondImage,
+    secondImageUtm: props.secondImageUtm,
+    thirdImage: props.thirdImage,
+    thirdImageUtm: props.thirdImageUtm,
+    fourthImage: props.fourthImage,
+    fourthImageUtm: props.fourthImageUtm,
+    styles: styles.join(' '),
+  }
+</script>
+
+<table class="w-full">
+  <tr>
+    <td align="center">
+      <table align="left" width="298" class="sm:mb-4 sm:w-[300px] border-none sm:float-none float-left">
+        <tr>
+          <td>
+            <table align="left" width="{{imagesWidth}}" class="border-none float-left">
+              <tr>
+                <td align="center">
+                  <if condition="firstImageUtm == true">
+                    <a href="{{firstImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                      <img class="block" src="{{firstImage}}" src-production="images/{{firstImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </if>
+                  <else>
+                    <a class="block" href="{{firstImageLink}}" target="_blank">
+                      <img src="{{firstImage}}" src-production="images/{{firstImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </else>
+                </td>
+              </tr>
+            </table>
+            <table align="right" width="{{imagesWidth}}" class="border-none float-right">
+              <tbody>
+              <tr>
+                <td align="center">
+                  <if condition="secondImageUtm == true">
+                    <a class="block" href="{{secondImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                      <img src="{{secondImage}}" src-production="images/{{secondImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </if>
+                  <else>
+                    <a class="block" href="{{secondImageLink}}" target="_blank">
+                      <img src="{{secondImage}}" src-production="images/{{secondImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </else>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table align="right" width="298" class="sm:w-[300px] border-none sm:float-none float-right">
+        <tr>
+          <td>
+            <table align="left" width="{{imagesWidth}}" class="border-none float-left">
+              <tr>
+                <td align="center">
+                  <if condition="thirdImageUtm == true">
+                    <a href="{{thirdImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                      <img class="block" src="{{thirdImage}}" src-production="images/{{thirdImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </if>
+                  <else>
+                    <a class="block" href="{{thirdImageLink}}" target="_blank">
+                      <img src="{{thirdImage}}" src-production="images/{{thirdImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </else>
+                </td>
+              </tr>
+            </table>
+            <table align="right" width="{{imagesWidth}}" class="border-none float-right">
+              <tbody>
+              <tr>
+                <td align="center">
+                  <if condition="fourthImageUtm == true">
+                    <a class="block" href="{{fourthImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                      <img src="{{fourthImage}}" src-production="images/{{fourthImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </if>
+                  <else>
+                    <a class="block" href="{{fourthImageLink}}" target="_blank">
+                      <img src="{{fourthImage}}" src-production="images/{{fourthImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                    </a>
+                  </else>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
