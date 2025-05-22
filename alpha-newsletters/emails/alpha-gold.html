@@ -1,6 +1,7 @@
 ---
 wrapperBg: "#FFFFFF"
 primaryColor: "#11366B"
+textGreyColor: "#616161"
 dividerColor: "#EBEBEB"
 utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
@@ -25,6 +26,42 @@ altImg: "Alpha Bank Gold Personal Banking"
                 <x-spacer height="30px" />
 
                 <x-button btnWidth="208px" btnHeight="52px" align="center" href="https://maizzle.com" image="btn.png" utmActive="true" alt="{{ page.altImg }}" />
+
+                <x-divider space-y="50px" color="{{page.dividerColor}}"  />
+
+                <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="top" />
+
+                <table class="w-full bg-[#f0f3fd]">
+                  <tr>
+                    <td class="px-6 pb-6">
+                      <h2 class="mt-0 mb-0 text-2xl text-center leading-8" style="color: {{page.primaryColor}};">
+                        Aποκτώ το Alpha Cyber Security
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6">
+                      <x-two-cols-images
+                        imagesWidth="276px"
+                        imagesHeight="118px"
+                        firstImage="by-mobile.png"
+                        firstImageLink="https://apps.apple.com/gr/app/myalpha-mobile/id378674531?l=el"
+                        firstImageUtm="true"
+                        secondImage="by-pc.png"
+                        secondImageLink="https://secure.alpha.gr/auth/ebanking/id/login?login_challenge=e793f555633042501294a32166291377&lang=el"
+                        secondImageUtm="false"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 pt-6">
+                      <p class="m-0 text-base text-center" style="color: {{page.primaryColor}};">
+                        Επιλέξτε στο μενού την ενότητα Νέα Προϊόντα > Ασφάλεια.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="bottom" />
 
                 <x-divider space-y="50px" color="{{page.dividerColor}}"  />
 

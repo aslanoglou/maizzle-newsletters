@@ -1,0 +1,65 @@
+<script props>
+  let styles = []
+
+  if (props.imagesWidth) {
+    styles.push(`width: ${props.imagesWidth};`)
+  }
+
+  if (props.imagesHeight) {
+    styles.push(`max-height: ${props.imagesHeight};`)
+  }
+
+  styles.push(`max-width: 100%;`)
+
+  module.exports = {
+    firstImage: props.firstImage,
+    imagesWidth: props.imagesWidth,
+    imagesHeight: props.imagesHeight,
+    firstImageUtm: props.firstImageUtm,
+    secondImage: props.secondImage,
+    secondImageUtm: props.secondImageUtm,
+    styles: styles.join(' '),
+  }
+</script>
+
+<table class="w-full">
+  <tr>
+    <td>
+        <table align="left" width="{{imagesWidth}}" class="sm:mb-4 sm:w-full border-none sm:float-none float-left">
+          <tr>
+            <td align="center" class="pad_bottom" >
+              <if condition="firstImageUtm == true">
+                <a href="{{firstImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                  <img class="block" src="{{firstImage}}" src-production="images/{{firstImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                </a>
+              </if>
+              <else>
+                <a class="block" href="{{firstImageLink}}" target="_blank">
+                  <img src="{{firstImage}}" src-production="images/{{firstImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                </a>
+              </else>
+            </td>
+          </tr>
+        </table>
+        <table align="right" width="{{imagesWidth}}" class="sm:w-full border-none sm:float-none float-right">
+          <tbody>
+          <tr>
+            <td align="center" class="pad_bottom" >
+              <if condition="secondImageUtm == true">
+                <a class="block" href="{{secondImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                  <img src="{{secondImage}}" src-production="images/{{secondImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                </a>
+              </if>
+              <else>
+                <a class="block" href="{{secondImageLink}}" target="_blank">
+                  <img src="{{secondImage}}" src-production="images/{{secondImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
+                </a>
+              </else>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+    </td>
+  </tr>
+</table>
+
