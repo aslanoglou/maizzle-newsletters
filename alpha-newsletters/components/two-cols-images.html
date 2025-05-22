@@ -27,7 +27,7 @@
     <td>
         <table align="left" width="{{imagesWidth}}" class="sm:mb-4 sm:w-full border-none sm:float-none float-left">
           <tr>
-            <td align="center" class="pad_bottom" >
+            <td align="center">
               <if condition="firstImageUtm == true">
                 <a href="{{firstImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
                   <img class="block" src="{{firstImage}}" src-production="images/{{firstImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
@@ -44,7 +44,7 @@
         <table align="right" width="{{imagesWidth}}" class="sm:w-full border-none sm:float-none float-right">
           <tbody>
           <tr>
-            <td align="center" class="pad_bottom" >
+            <td align="center">
               <if condition="secondImageUtm == true">
                 <a class="block" href="{{secondImageLink}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
                   <img src="{{secondImage}}" src-production="images/{{secondImage}}" width="{{imagesWidth}}" style="{{ styles }}" alt="{{page.altImg}}">
