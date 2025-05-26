@@ -1,0 +1,85 @@
+<script props>
+  module.exports = {
+    linkedinLink: props.linkedinLink,
+    twitterLink: props.twitterLink,
+    instagramLink: props.instagramLink,
+    facebookLink: props.facebookLink,
+    youtubeLink: props.youtubeLink,
+  }
+</script>
+
+<table class="w-full">
+  <tr>
+    <td>
+      <table align="left" width="172" class="sm:w-full border-none sm:float-none float-left">
+        <tr>
+          <td align="center" >
+            <h2 class="text-[18px] leading-[34px] my-0" style="color:{{page.primaryColor}};">Ακολουθήστε μας</h2>
+          </td>
+        </tr>
+      </table>
+      <table class="w-full sm:table hidden">
+        <tr>
+          <td>
+            <x-spacer height="20px" />
+          </td>
+        </tr>
+      </table>
+
+        <table align="right" class="border-none sm:mx-auto sm:float-none float-right">
+          <tbody>
+          <tr>
+            <if condition="linkedinLink">
+              <td align="center" style="width: 34px;">
+                <a class="inline-block" href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}" target="_blank">
+                  <img class="block" src="{{page.type}}-linkedin.png" src-production="images/{{page.type}}-linkedin.png" width="34" alt="Alpha Bank"  style="width:34px; max-width:100%; max-height: 34px;">
+                </a>
+              </td>
+              <td style="width: 16px;"></td>
+            </if>
+            <if condition="twitterLink">
+              <td align="center" style="width: 34px;">
+                <a  class="inline-block" href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}"
+                  target="_blank">
+                  <img class="block" src="{{page.type}}-twitter.png" src-production="images/{{page.type}}-twitter.png" width="34"
+                       alt="Alpha Bank" style="width:34px; max-width:100%; max-height: 34px;">
+                </a>
+              </td>
+              <td style="width: 16px;"></td>
+            </if>
+            <if condition="instagramLink">
+              <td align="center" style="width: 34px;">
+                <a class="inline-block" href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}"
+                  target="_blank">
+                  <img class="block" src="{{page.type}}-instagram.png" src-production="images/{{page.type}}-instagram.png" width="34"
+                       alt="Alpha Bank" style="width:34px; max-width:100%; max-height: 34px;">
+                </a>
+              </td>
+              <td style="width: 16px;"></td>
+            </if>
+            <if condition="facebookLink">
+              <td align="center" style="width: 34px;">
+                <a class="inline-block" href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}"
+                  target="_blank">
+                  <img class="block" src="{{page.type}}-facebook.png" src-production="images/{{page.type}}-facebook.png" width="34"
+                       alt="Alpha Bank" style="width:34px; max-width:100%; max-height: 34px;">
+                </a>
+              </td>
+              <td style="width: 16px;"></td>
+            </if>
+            <if condition="youtubeLink">
+              <td align="center" style="width: 34px;">
+                <a class="inline-block" href="https://www.alpha.gr/el/gold/gold-personal-banking/?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{ page.utm }}"
+                  target="_blank">
+                  <img class="block" src="{{page.type}}-youtube.png" src-production="images/{{page.type}}-youtube.png" width="34"
+                       alt="Alpha Bank" style="width:34px; max-width:100%; max-height: 34px;">
+                </a>
+              </td>
+            </if>
+          </tr>
+          </tbody>
+        </table>
+    </td>
+  </tr>
+</table>
+
