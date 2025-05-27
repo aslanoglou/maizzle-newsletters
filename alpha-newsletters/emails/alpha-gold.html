@@ -8,7 +8,6 @@ utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
 ---
 
-
 <x-gold>
   <div class="font-sans sm:px-4">
     <table align="center" class="m-0 mx-auto">
@@ -18,9 +17,6 @@ altImg: "Alpha Bank Gold Personal Banking"
             <tr>
               <td bgcolor={{page.wrapperBg}} class="py-3 px-[19px] bg-alphaWhite">
                 <!-- For headerSecondLogo use 'none', 'gold', or 'bonus'-->
-
-                <x-divider space-y="50px" color="{{page.dividerColor}}"  />
-
                 <x-header headerSecondLogo="gold" />
 
                 <x-spacer height="30px" />
@@ -29,22 +25,29 @@ altImg: "Alpha Bank Gold Personal Banking"
 
                 <x-spacer height="30px" />
 
-                <x-button btnWidth="208px" btnHeight="52px" align="center" href="https://maizzle.com" image="btn.png" utmActive="true" alt="{{ page.altImg }}" />
+                <x-button btnWidth="208px"
+                          btnHeight="52px"
+                          align="center"
+                          href="https://maizzle.com"
+                          image="btn.png"
+                          utmActive="true"
+                          alt="{{ page.altImg }}"/>
 
-                <x-divider space-y="50px" color="{{page.dividerColor}}"  />
+                <x-divider space-y="50px" color="{{page.dividerColor}}"/>
 
+                <!-- Rounded Corners Section -->
                 <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="top" />
 
                 <table class="w-full bg-[#f0f3fd]">
                   <tr>
-                    <td class="px-6 pb-6">
-                      <h2 class="mt-0 mb-0 text-2xl leading-8 text-center leading-8" style="color: {{page.primaryColor}};">
+                    <td class="px-[24px] pb-[24px]">
+                      <h2 class="mt-0 mb-0 text-[24px] leading-[32px] text-center" style="color:{{page.primaryColor}};">
                         Aποκτώ το Alpha Cyber Security
                       </h2>
                     </td>
                   </tr>
                   <tr>
-                    <td class="px-5">
+                    <td class="px-[20px]">
                       <x-two-cols-images
                         imagesWidth="276px"
                         imagesHeight="118px"
@@ -53,26 +56,27 @@ altImg: "Alpha Bank Gold Personal Banking"
                         firstImageUtm="true"
                         secondImage="by-pc.png"
                         secondImageLink="https://secure.alpha.gr/auth/ebanking/id/login?login_challenge=e793f555633042501294a32166291377&lang=el"
-                        secondImageUtm="false"/>
+                        secondImageUtm="false" />
                     </td>
                   </tr>
                   <tr>
-                    <td class="px-6 pt-6">
-                      <p class="m-0 text-base text-base leading-6 text-center" style="color: {{page.primaryColor}};">
+                    <td class="px-[24px] pt-[24px]">
+                      <p class="m-0 text-base text-base leading-[24px] text-center" style="color: {{page.primaryColor}};">
                         Επιλέξτε στο μενού την ενότητα Νέα Προϊόντα > Ασφάλεια.
                       </p>
                     </td>
                   </tr>
                 </table>
 
-                <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="bottom" />
+                <x-rounded-corners width="100%"  height="auto" bgColor="#f0f3fd" topOrBottom="bottom" />
+                <!-- /Rounded Corners Section -->
 
                 <x-spacer height="30px" />
 
                 <table class="w-full">
                   <tr>
-                    <td class="pb-4">
-                      <h2 class="mt-0 mb-0 text-[18px] text-left leading-[27px]" style="color: {{page.primaryColor}};">
+                    <td class="pb-[16px]">
+                      <h2 class="mt-0 mb-0 text-[18px] sm:text-center text-left leading-[27px]" style="color: {{page.primaryColor}};">
                         Είμαστε δίπλα σας
                       </h2>
                     </td>
@@ -93,28 +97,45 @@ altImg: "Alpha Bank Gold Personal Banking"
                         thirdImageUtm="false"
                         fourthImage="btn-security.png"
                         fourthImageLink="https://www.alpha.gr/el/idiotes/Support-Center/sumvoules-gia-tin-asfaleia-sas"
-                        fourthImageUtm="true"/>
+                        fourthImageUtm="true" />
                     </td>
                   </tr>
                 </table>
 
                 <x-spacer height="30px" />
 
-                <x-divider top="24px" bottom="24px" color="{{page.dividerColor}}"  />
+                <x-divider top="24px" bottom="24px" color="{{page.dividerColor}}" />
 
                 <x-follow-us
+                  title="Ακολουθήστε μας"
                   linkedinLink="https://www.linkedin.com/company/alpha-bank"
                   twitterLink="https://twitter.com/Alpha_Bank"
                   instagramLink="https://www.instagram.com/alphabankstories/?hl=el"
                   facebookLink="https://www.facebook.com/AlphaBankPage"
-                  youtubeLink="https://www.youtube.com/user/alphabank"
-                />
+                  youtubeLink="https://www.youtube.com/user/alphabank" />
 
-                <x-divider top="24px" bottom="24px" color="{{page.dividerColor}}"  />
+                <x-divider top="24px"bottom="24px" color="{{page.dividerColor}}" />
 
-                <x-rounded-corners width="100%" height="auto" bgColor="#DAE2F9" topOrBottom="top" />
+                <x-spacer height="30px" />
 
-                <x-rounded-corners width="100%" height="auto" bgColor="#DAE2F9" topOrBottom="bottom" />
+                <table class="w-full">
+                  <tr>
+                    <td class="pb-[16px]">
+                      <h2 class="mt-0 mb-0 text-[10px] leading-[14px] text-left " style="color: {{page.primaryColor}};">
+                        Είμαστε δίπλα σας
+                      </h2>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">You have received this message from alpha@crm.alpha.gr, because you have consented to receive communications regarding new products and/or services from Alpha Bank.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Respecting our customer’s personal data, we inform you that, according to the General Data Protection Regulation (GDPR), you have the right to change your preference at any time. This can be done, through our website www.alpha.gr, via myAlpha Web/Mobile banking or by visiting the branch you conduct business with.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">For security reasons, each electronic communication will include your full name/corporate name and the last two digits of your Customer Number which is unique in our systems. Alpha Bank will never ask for your passwords in any way (e.g. via phone, email). They are strictly personal and should not be disclosed to anyone.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Please do not answer this email. If you do not wish to receive emails from Alpha Bank, please click here.</p>
+                    </td>
+                  </tr>
+                </table>
+
+                <x-header headerSecondLogo="none" />
+
+                <x-spacer height="30px" />
+
               </td>
             </tr>
           </table>
