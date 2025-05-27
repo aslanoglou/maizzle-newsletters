@@ -1,0 +1,48 @@
+<script props>
+  let styles = []
+
+  if (props.color) {
+    styles.push(`color: ${props.color};`)
+  }
+
+  if (props.fontSize) {
+    styles.push(`font-size: ${props.fontSize};`)
+  }
+
+  if (props.lineHeight) {
+    styles.push(`lineHeight: ${props.lineHeight};`)
+  }
+
+  if (props.textSize) {
+    styles.push(`color: ${props.color};`)
+  }
+
+  module.exports = {
+    align: props.align || 'right',
+    gearColor: props.gearColor,
+    styles: styles.join(' ')
+  }
+</script>
+
+<table class="w-full">
+  <tr>
+    <td>
+      <table style="width: 240px; float: {{ align }};">
+        <tr>
+          <td width="34" style="width: 34px">
+            <if condition="gearColor == `gold`">
+              <img src="gear-gold.png" src-production="images/gear-gold.png" width="24" height="24" alt="Gear Icon" style="display: block; margin: 0 auto; width: 24px; height: 24px;" />
+            </if>
+            <else>
+              <img src="gear-mass.png" src-production="images/gear-mass.png" width="24" height="24" alt="Gear Icon" style="display: block; margin: 0 auto; width: 24px; height: 24px;" />
+            </else>
+          </td>
+          <td style="{{ styles }}">
+            Αριθμός Πελάτη: %%CDI_Masked%%<br>%%Surname%% %%Name%%
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>

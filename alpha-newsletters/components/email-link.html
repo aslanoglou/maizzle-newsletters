@@ -1,0 +1,19 @@
+<script props>
+  let styles = []
+
+  if (props.color) {
+    styles.push(`color: ${props.color};`)
+  }
+  styles.push(`text-decoration:none!important;`)
+
+  module.exports = {
+    name: props.name,
+    domain: props.domain,
+    domainExt: props.domainExt,
+    color: props.color,
+    styles: styles.join(' ')
+  }
+</script>
+
+
+<span style="{{ styles }}">{{name}}</span><span style="font-size: 1px; line-height:1px; white-space:no-wrap"></span><span style="{{ styles }}">@</span><span style="font-size: 1px; line-height:1px; white-space:no-wrap"></span><span style="{{ styles }}">{{domain}}</span><span style="font-size: 1px; line-height:1px; white-space:no-wrap"></span><span style="{{ styles }}">.</span><span style="font-size: 1px; line-height:1px; white-space:no-wrap"></span><span style="{{ styles }}">{{domainExt}}</span>

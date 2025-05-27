@@ -17,11 +17,15 @@ altImg: "Alpha Bank Gold Personal Banking"
             <tr>
               <td bgcolor={{page.wrapperBg}} class="py-3 px-[19px] bg-alphaWhite">
                 <!-- For headerSecondLogo use 'none', 'gold', or 'bonus'-->
-                <x-header headerSecondLogo="gold" />
+                <x-header headerSecondLogo="{{page.type}}" />
 
                 <x-spacer height="30px" />
 
                 <x-hero-image width="612px" height="511px" image="header.png" alt="{{ page.altImg }}"/>
+
+                <x-spacer height="30px" />
+
+                <x-gear gearColor="{{ page.type }}" fontSize="11px" lineHeight="14px" color="#ababab" align="right" />
 
                 <x-spacer height="30px" />
 
@@ -124,10 +128,10 @@ altImg: "Alpha Bank Gold Personal Banking"
                       <h2 class="mt-0 mb-0 text-[10px] leading-[14px] text-left " style="color: {{page.primaryColor}};">
                         Είμαστε δίπλα σας
                       </h2>
-                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">You have received this message from alpha@crm.alpha.gr, because you have consented to receive communications regarding new products and/or services from Alpha Bank.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">You have received this message from <x-email-link color="{{page.primaryColor}}" name="alpha" domain="crm.alpha" domainExt="gr"/>, because you have consented to receive communications regarding new products and/or services from Alpha Bank.</p>
                       <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Respecting our customer’s personal data, we inform you that, according to the General Data Protection Regulation (GDPR), you have the right to change your preference at any time. This can be done, through our website www.alpha.gr, via myAlpha Web/Mobile banking or by visiting the branch you conduct business with.</p>
                       <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">For security reasons, each electronic communication will include your full name/corporate name and the last two digits of your Customer Number which is unique in our systems. Alpha Bank will never ask for your passwords in any way (e.g. via phone, email). They are strictly personal and should not be disclosed to anyone.</p>
-                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Please do not answer this email. If you do not wish to receive emails from Alpha Bank, please click here.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Please do not answer this email. If you do not wish to receive emails from Alpha Bank, please click <a href="https://apps.alpha.gr/GDPR/default.aspx" target="_blank" style="color:{{page.primaryColor}};">here</a>.</p>
                     </td>
                   </tr>
                 </table>
