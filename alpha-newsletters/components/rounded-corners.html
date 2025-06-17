@@ -1,34 +1,18 @@
 <script props>
-  let styles = []
-
-  if (props.bgColor) {
-    styles.push(`background-color: ${props.bgColor};`)
-  }
-
   module.exports = {
     bgColor: props.bgColor,
-    styles: styles.join(' '),
+    styles: props.bgColor ? `background-color: ${props.bgColor};` : '',
   }
 </script>
 
-
-<if condition="topOrBottom === 'top'">
-  <!--  <table align="center" width="100%" class="w-full" style="{{ styles }}">-->
-  <table align="center" width="100%" class="w-full bg-[{{bgColor}}]">
-    <tr>
-      <td width="24px" class="w-6 h-6" align="left"><img src="corner-top-left.png" src-production="images/corner-top-left.png" width="24" height="24" class="block"></td>
-      <td>&nbsp;</td>
-      <td width="24px" class="w-6 h-6" align="right"><img src="corner-top-right.png" src-production="images/corner-top-right.png" width="24" height="24" class="block"></td>
-    </tr>
-  </table>
-</if>
-<else>
-  <!--  <table align="center" width="100%" class="w-full" style="{{ styles }}">-->
-  <table align="center" width="100%" class="w-full bg-[{{bgColor}}]">
-    <tr>
-      <td width="24px" class="w-6 h-6" align="left"><img src="corner-bottom-left.png" src-production="images/corner-bottom-left.png" width="24" height="24" class="block"></td>
-      <td>&nbsp;</td>
-      <td width="24px" class="w-6 h-6" align="right"><img src="corner-bottom-right.png" src-production="images/corner-bottom-right.png" width="24" height="24" class="block"></td>
-    </tr>
-  </table>
-</else>
+<table align="center" width="100%" class="w-full bg-[{{bgColor}}]">
+  <tr>
+    <td width="24px" class="w-6 h-6" align="left">
+      <img src="corner-{{topOrBottom}}-left.png" src-production="images/corner-{{topOrBottom}}-left.png" width="24" height="24" class="block">
+    </td>
+    <td>&nbsp;</td>
+    <td width="24px" class="w-6 h-6" align="right">
+      <img src="corner-{{topOrBottom}}-right.png" src-production="images/corner-{{topOrBottom}}-right.png" width="24" height="24" class="block">
+    </td>
+  </tr>
+</table>

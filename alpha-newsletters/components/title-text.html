@@ -1,0 +1,50 @@
+<script props>
+
+  let styles = []
+
+  if (props.align) {
+    styles.push(`text-align: ${props.align};`)
+  }
+
+  if (props.fontSize) {
+    styles.push(`font-size: ${props.fontSize};`)
+  }
+
+  if (props.lineHeight) {
+    styles.push(`line-height: ${props.lineHeight};`)
+  }
+
+  if (props.fontWeight) {
+    styles.push(`font-weight: ${props.fontWeight};`)
+  }
+
+  if (props.color) {
+    styles.push(`color: ${props.color};`)
+  }
+
+  if (props.spaceX){
+    styles.push(`padding-left: ${props.spaceX}; padding-right: ${props.spaceX};`)
+  }
+  if (props.spaceUp){
+    styles.push(`padding-top: ${props.spaceUp};`)
+  }
+  if (props.spaceDown){
+    styles.push(`padding-bottom: ${props.spaceDown};`)
+  }
+
+  module.exports = {
+    bgColor: props.bgColor,
+    fontWeight: props.fontWeight,
+    text: props.text,
+    color: props.color || page.primaryColor,
+    styles: styles.join(' ')
+  }
+</script>
+
+<table class="w-full bg-[{{bgColor}}]" style="">
+  <tr>
+    <td style="{{ styles }}">
+      {{ text }}
+    </td>
+  </tr>
+</table>

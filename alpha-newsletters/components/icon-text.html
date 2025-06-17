@@ -1,0 +1,63 @@
+<script props>
+  let styles = []
+
+  if (props.iconWidth) {
+    styles.push(`width: ${props.iconWidth};`)
+  }
+
+  if (props.iconHeight) {
+    styles.push(`max-height: ${props.iconHeight};`)
+  }
+
+  if (props.color) {
+    styles.push(`color: ${props.color};`)
+  }
+
+  styles.push(`max-width: 100%;`)
+
+  module.exports = {
+    verticalAlign: props.verticalAlign || 'middle',
+    iconWidth: props.iconWidth,
+    iconHeight: props.iconHeight,
+    spaceUp: props.spaceUp,
+    spaceDown: props.spaceDown,
+    spaceX: props.spaceX,
+    color: props.color,
+    text: props.text,
+    image: props.image,
+    styles: styles.join(' '),
+    alt: props.alt || ''
+  }
+</script>
+
+<table class="w-full bg-({{bgColor}})" style="padding-top: {{spaceUp}}; padding-bottom: {{spaceDown}};">
+  <tr style="vertical-align: {{verticalAlign}};">
+    <if condition="spaceX">
+      <td width="{{spaceX}}"></td>
+    </if>
+    <td align="center" width="{{width}}">
+      <img class="mx-auto block"
+           src="{{ image }}"
+           src-production="images/{{ image }}"
+           width="{{ iconWidth }}"
+           style="{{ styles }}"
+           alt="{{ alt }}" />
+    </td>
+    <td width="{{space}}"></td>
+    <if condition="color">
+      <td style="color: {{color}};">
+        {{ text }}
+      </td>
+    </if>
+    <else>
+      <td>
+        {{ text }}
+      </td>
+    </else>
+    <if condition="spaceX">
+      <td width="{{spaceX}}"></td>
+    </if>
+  </tr>
+</table>
+
+

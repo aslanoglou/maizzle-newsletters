@@ -1,13 +1,8 @@
 <script props>
   let styles = []
 
-  if (props.width) {
-    styles.push(`width: ${props.width};`)
-  }
-
-  if (props.height) {
-    styles.push(`max-height: ${props.height};`)
-  }
+  if (props.width) styles.push(`width: ${props.width};`)
+  if (props.height) styles.push(`max-height: ${props.height};`)
 
   module.exports = {
     utmActive: props.utmActive,
@@ -23,36 +18,19 @@
 <table class="w-full">
   <tr>
     <td align="{{align}}">
-      <if condition="utmActive == true">
-        <a href="{{href}}?utm_source=newsletter&utm_medium=CVDM&utm_campaign={{page.utm}}" class="inline-block" target="_blank">
-          <img class="block"
-               src="{{ image }}"
-               src-production="images/{{ image }}"
-               width="{{ btnWidth }}"
-               height="auto"
-               max-width="100%"
-               border="none"
-               max-height="{{ btnHeight }}"
-               style="{{ styles }}"
-               alt="{{ alt }}" />
-        </a>
-      </if>
-      <else>
-        <a href="{{href}}" class="inline-block" target="_blank">
-          <img class="mx-auto block"
-               src="{{ image }}"
-               src-production="images/{{ image }}"
-               width="{{ btnWidth }}"
-               height="auto"
-               max-width="100%"
-               border="none"
-               max-height="{{ btnHeight }}"
-               style="{{ styles }}"
-               alt="{{ alt }}" />
-        </a>
-      </else>
+      <a href="{{href}}{{ utmActive ? `?utm_source=newsletter&utm_medium=CVDM&utm_campaign=${page.utm}` : '' }}"
+         class="inline-block" target="_blank">
+        <img class="block mx-auto"
+             src="{{ image }}"
+             src-production="images/{{ image }}"
+             width="{{ btnWidth }}"
+             height="auto"
+             max-width="100%"
+             border="none"
+             max-height="{{ btnHeight }}"
+             style="{{ styles }}"
+             alt="{{ alt }}" />
+      </a>
     </td>
   </tr>
 </table>
-
-

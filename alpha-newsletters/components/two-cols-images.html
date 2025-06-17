@@ -1,5 +1,17 @@
 <script props>
+
+  let containerStyles = []
   let styles = []
+
+  if (props.spaceX){
+    containerStyles.push(`padding-left: ${props.spaceX}; padding-right: ${props.spaceX};`)
+  }
+  if (props.spaceUp){
+    containerStyles.push(`padding-top: ${props.spaceUp};`)
+  }
+  if (props.spaceDown){
+    containerStyles.push(`padding-bottom: ${props.spaceDown};`)
+  }
 
   if (props.imagesWidth) {
     styles.push(`width: ${props.imagesWidth};`)
@@ -12,19 +24,23 @@
   styles.push(`max-width: 100%;`)
 
   module.exports = {
+    bgColor: props.bgColor,
+    spaceUp: props.spaceUp,
+    spaceX: props.spaceX,
     firstImage: props.firstImage,
     imagesWidth: props.imagesWidth,
     imagesHeight: props.imagesHeight,
     firstImageUtm: props.firstImageUtm,
     secondImage: props.secondImage,
     secondImageUtm: props.secondImageUtm,
+    containerStyles: containerStyles.join(' '),
     styles: styles.join(' '),
   }
 </script>
 
-<table class="w-full">
+<table class="w-full bg-[{{bgColor}}]">
   <tr>
-    <td>
+    <td style="{{ containerStyles }}">
         <table align="left" width="{{imagesWidth}}" class="sm:mb-4 sm:w-full border-none sm:float-none float-left">
           <tr>
             <td align="center">
