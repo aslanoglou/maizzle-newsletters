@@ -6,23 +6,23 @@ textGreyColor: "#616161"
 dividerColor: "#EBEBEB"
 utm: alpha-welcome-gold
 altImg: "Alpha Bank Gold Personal Banking"
-
-link1: '<a href="#">lorem ipsum</a>'
 ---
 
 <x-gold>
-  <div class="font-sans sm:px-[16px]">
+  <div class="font-sans sm:px-4">
     <table align="center" class="m-0 mx-auto">
       <tr>
         <td class="w-[650px] max-w-full">
           <table class="w-full">
             <tr>
-              <td bgcolor="{{page.wrapperBg}}" class="py-[12px] px-[19px] bg-alphaWhite">
-                <x-header headerSecondLogo="{{page.type}}" />
+              <!-- if is bonus newsletter the bg-alphaWhite change to bg-bonusGreyBg and wrapperBg must change to #efefef -->
+              <td bgcolor={{page.wrapperBg}} class="py-3 px-[19px] bg-alphaWhite">
+                <!-- For headerSecondLogo use 'none', 'gold', or 'bonus'-->
+                <x-header headerSecondLogo="gold" />
 
                 <x-spacer height="30px" />
 
-                <x-hero-image width="612px" height="511px" image="header.png" alt="{{page.altImg}}" />
+                <x-hero-image width="612px" height="511px" image="header.png" alt="{{ page.altImg }}"/>
 
                 <x-spacer height="30px" />
 
@@ -36,25 +36,11 @@ link1: '<a href="#">lorem ipsum</a>'
                           href="https://maizzle.com"
                           image="btn.png"
                           utmActive="true"
-                          alt="{{page.altImg}}" />
+                          alt="{{ page.altImg }}"/>
 
-                <x-divider space-y="50px" color="{{page.dividerColor}}" />
+                <x-divider space-y="50px" color="{{page.dividerColor}}"/>
 
-                <x-icon-text url-encoded="true"
-                  bgColor=""
-                  verticalAlign="top"
-                  iconWidth="26px"
-                  iconHeight="26px"
-                  space="15px"
-                  image="check.png"
-                  alt="{{page.altImg}}"
-                  text="έως 20% έκπτωση στον με το πλήρες πακέτο καλύψεων"
-                  spaceUp="0"
-                  spaceDown="0"
-                  spaceX="0"/>
-
-                <x-divider space-y="50px" color="{{page.dividerColor}}" />
-
+                <!-- Rounded Corners Section -->
                 <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="top" />
 
                 <x-title-text
@@ -68,6 +54,20 @@ link1: '<a href="#">lorem ipsum</a>'
                   spaceUp="0"
                   spaceDown="0"
                   spaceX="20px"/>
+
+                <table class="w-full">
+                  <tr>
+                    <td class="pb-[16px]">
+                      <h2 class="mt-0 mb-0 text-[10px] leading-[14px] text-left " style="color: {{page.primaryColor}};">
+                        Είμαστε δίπλα σας
+                      </h2>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">You have received this message from alpha@crm.alpha.gr, because you have consented to receive communications regarding new products and/or services from Alpha Bank.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Respecting our customer’s personal data, we inform you that, according to the General Data Protection Regulation (GDPR), you have the right to change your preference at any time. This can be done, through our website www.alpha.gr, via myAlpha Web/Mobile banking or by visiting the branch you conduct business with.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">For security reasons, each electronic communication will include your full name/corporate name and the last two digits of your Customer Number which is unique in our systems. Alpha Bank will never ask for your passwords in any way (e.g. via phone, email). They are strictly personal and should not be disclosed to anyone.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Please do not answer this email. If you do not wish to receive emails from Alpha Bank, please click here.</p>
+                    </td>
+                  </tr>
+                </table>
 
                 <x-title-text
                   text="Επιλέξτε στο μενού την ενότητα Νέα Προϊόντα > Ασφάλεια."
@@ -95,22 +95,28 @@ link1: '<a href="#">lorem ipsum</a>'
                   secondImageLink="https://secure.alpha.gr/auth/ebanking/id/login?login_challenge=e793f555633042501294a32166291377&lang=el"
                   secondImageUtm="false" />
 
+                <table class="w-full bg-[#f0f3fd]" style="padding-top: 20px; padding-bottom: 20px;">
+                  <tr style="vertical-align: middle">
+                    <td width="20"></td>
+                    <td align="center" width="26">
+                      <img class="mx-auto block"
+                           src="check.png"
+                           src-production="images/check.png"
+                           width="26px"
+                           style="width: 26px; max-height: 26px; max-width: 100%;"
+                           alt="{{page.altImg}}" />
+                    </td>
+                    <td width="15"></td>
+                    <td>
+                      έως 20% έκπτωση στον με το πλήρες πακέτο καλύψεων
+                    </td>
+                    <td width="20"></td>
+                  </tr>
+                </table>
+
                 <x-icon-text url-encoded="true"
                              bgColor="#f0f3fd"
-                             verticalAlign="μιδδλε"
-                             iconWidth="26px"
-                             iconHeight="26px"
-                             space="15px"
-                             image="check.png"
-                             alt="{{page.altImg}}"
-                             text="έως 20% έκπτωση στον με το πλήρες πακέτο καλύψεων"
-                             spaceUp="20px"
-                             spaceDown="0"
-                             spaceX="20px"/>
-                <x-icon-text url-encoded="true"
-                             color="#ff0000"
-                             bgColor="#f0f3fd"
-                             verticalAlign="μιδδλε"
+                             verticalAlign="middle"
                              iconWidth="26px"
                              iconHeight="26px"
                              space="15px"
@@ -121,8 +127,40 @@ link1: '<a href="#">lorem ipsum</a>'
                              spaceDown="0"
                              spaceX="20px"/>
 
+                <x-rounded-corners width="100%"  height="auto" bgColor="#f0f3fd" topOrBottom="bottom" />
+                <!-- /Rounded Corners Section -->
 
-                <x-rounded-corners width="100%" height="auto" bgColor="#f0f3fd" topOrBottom="bottom" />
+                <x-spacer height="30px" />
+
+                <table class="w-full bg-[#FFFFFF]" style="padding-top: 20px; padding-bottom: 20px;">
+                  <tr style="vertical-align: middle">
+                    <td align="center" width="26">
+                      <img class="mx-auto block"
+                           src="check.png"
+                           src-production="images/check.png"
+                           width="26px"
+                           style="width: 26px; max-height: 26px; max-width: 100%;"
+                           alt="{{page.altImg}}" />
+                    </td>
+                    <td width="15"></td>
+                    <td>
+                      έως 20% έκπτωση στον με το πλήρες πακέτο καλύψεων
+                    </td>
+                  </tr>
+                </table>
+
+                <x-icon-text url-encoded="true"
+                             bgColor="#FFFFFF"
+                             verticalAlign="middle"
+                             iconWidth="26px"
+                             iconHeight="26px"
+                             space="15px"
+                             image="check.png"
+                             alt="{{page.altImg}}"
+                             text="έως 20% έκπτωση στον με το πλήρες πακέτο καλύψεων"
+                             spaceUp="20px"
+                             spaceDown="0"
+                             spaceX="0px"/>
 
                 <x-spacer height="30px" />
 
@@ -165,11 +203,28 @@ link1: '<a href="#">lorem ipsum</a>'
                   facebookLink="https://www.facebook.com/AlphaBankPage"
                   youtubeLink="https://www.youtube.com/user/alphabank" />
 
-                <x-divider top="24px" bottom="24px" color="{{page.dividerColor}}" />
+                <x-divider top="24px"bottom="24px" color="{{page.dividerColor}}" />
 
                 <x-spacer height="30px" />
 
+                <table class="w-full">
+                  <tr>
+                    <td class="pb-[16px]">
+                      <h2 class="mt-0 mb-0 text-[10px] leading-[14px] text-left " style="color: {{page.primaryColor}};">
+                        Είμαστε δίπλα σας
+                      </h2>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">You have received this message from alpha@crm.alpha.gr, because you have consented to receive communications regarding new products and/or services from Alpha Bank.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Respecting our customer’s personal data, we inform you that, according to the General Data Protection Regulation (GDPR), you have the right to change your preference at any time. This can be done, through our website www.alpha.gr, via myAlpha Web/Mobile banking or by visiting the branch you conduct business with.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">For security reasons, each electronic communication will include your full name/corporate name and the last two digits of your Customer Number which is unique in our systems. Alpha Bank will never ask for your passwords in any way (e.g. via phone, email). They are strictly personal and should not be disclosed to anyone.</p>
+                      <p class="text-[10px] leading-[14px] my-4 text-left" style="color: {{page.textGreyColor}};">Please do not answer this email. If you do not wish to receive emails from Alpha Bank, please click here.</p>
+                    </td>
+                  </tr>
+                </table>
+
+                <x-header headerSecondLogo="none" />
+
                 <x-spacer height="30px" />
+
               </td>
             </tr>
           </table>

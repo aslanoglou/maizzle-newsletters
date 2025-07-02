@@ -6,6 +6,7 @@ module.exports = {
         alphaWhite: '#FFFFFF',
         alphaBlue500: '#11366B',
         alphaBlue400: '#2A4B8C',
+        bonusGreyBg: '#efefef',
       },
       fontFamily: {
         sans: ['Arial', 'sans-serif'],
